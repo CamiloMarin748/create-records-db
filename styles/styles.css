@@ -4,16 +4,18 @@
 /*selectores de elementos *
 
 /* centramos el titulo h1 */
+
+
 h1 {
   
   font-family: 'Ballet', sans-serif;
-  color: red;  
+  color: rgb(55, 0, 255);  
   text-align: center;  
 }
 h2 {
   
   font-family: 'Ballet', sans-serif;
-  color: black;  
+  color: rgb(102, 30, 236);  
   text-align: center;  
 }
 /* Mostraemos el titulo h2 a la derecha */
@@ -22,6 +24,16 @@ section h2 {
   text-align: center;
   color :black;
 }
+
+
+/*label {
+  font-size: 12px;
+  font-family: 'Ballet', sans-serif;
+  /*color: red;  
+  text-align: center;
+  width: 100%; 
+}*/
+
 
 section p {
   text-align: center;
@@ -103,6 +115,7 @@ div span {
 }
 
 .link {
+  
   text-align: center;
   font-weight: bold;
   font-style: italic;

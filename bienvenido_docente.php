@@ -12,9 +12,10 @@
 
 
 <nav class="topnav">
-            <a class="active" href="index.php">Acceuille</a>
+        <a class="active" href="bienvenido_docente.php">Acceuille</a>
             <a href="create-report.php">Reportar Horas</a>
-            <a href="consultar-report.php">Consultar Reportes </a>  
+            <a href="reportes\consultar_reportes.php">Consultar Reportes </a> 
+            <a href="reportes\consultar_salarios.php">Consultar Salarios </a>  
         </nav>
     <br>
         <section>

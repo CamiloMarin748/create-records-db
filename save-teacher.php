@@ -2,9 +2,9 @@
 
     $nombre_docente = $_REQUEST["nombre_docente"];
     $apellido_docente = $_REQUEST["apellido_docente"];
-    $cedula_docente = $_REQUEST["cedula_docente"];
+    $cedula_docente = $_REQUEST["username"];
     $valor_hora = $_REQUEST["valor_hora"];
-    $pwd = $_REQUEST["pwd"];
+    $pwd = $_REQUEST["password"];
     //     echo $nombre_docente; //imprimimos el contenido de la variable nombre_docente
    //      var_dump($_REQUEST); // imrpime todo lo que viene en la variable request
 

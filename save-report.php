@@ -6,6 +6,8 @@
     $num_estudiantes = $_REQUEST["numestu"];
     $modulo = $_REQUEST["modulo"];
     $horario = $_REQUEST["horario"];
+    $id_repo = $_REQUEST['id_repo'];
+
    // $fecha = $_REQUEST["fecha"];
    // $num_horas = $_REQUEST["cantho"];
 
@@ -27,16 +29,17 @@
 
     //4. ejecutar sentencia 
     $result = $q -> execute();
+
+    $docentes = $q -> fetchAll();
+    //var_dump($docentes);
+
    
     if($result){
         echo "<br><br><br><br>";
         echo "<h2>Información enviada ! </h2>\n";
-        echo "<h2>siga el enlace para ingresar las fechas y las horas </h2>\n";
+        echo "<h2>pulse el boton para ingresar las fechas y las horas </h2>\n";
         ?>
-        <br>
-        <br>
-        <br>
-        <a class = "link" href="create-horas.php">Ingresar Horas</a><br>   
+        
         <?php
     }
     else{
@@ -52,14 +55,27 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles\styles.css" type ="text/css">
+        <link rel="stylesheet" href="styles\stylesReport.css" type ="text/css">
+
         <title>Document</title>
     </head>
     <body>
     <body background="images/logo2.jpg" >        
     
+    <form class="form"  action="create-horas.php" method="POST">
     
+    <label for="id_docente"><?php /*echo $id_docente*/?></label>
+    <input id="id_docente" name="id_docente" type="hidden" value="<?php echo $id_docente?> ">
+
+    <label for="id_reporte"><?php /*echo $id_repo +1*/?></label>
+    <input id="id_reporte" name="id_reporte" type="hidden" value="<?php echo $id_repo +1?> ">
+    
+    <input type="submit" value="Ingresar fechas y horas"> 
+    </form>
     
     </body>
+    <br><br>
+    <a class = "link" href="index.php">Aller à la page d'acceuille </a>
     </html>
 
 

@@ -7,19 +7,26 @@
 
     $cnx = new PDO("mysql:host=$host; dbname=$dbname", $username,$password); //PDO =>php database object -> objetos para conectarse con bases de datos 
     $cnx2 = new PDO("mysql:host=$host; dbname=$dbname", $username,$password);
+    $cnx3 = new PDO("mysql:host=$host; dbname=$dbname", $username,$password);
     //2. construir la sentencia sql 
     $sql = "SELECT  * FROM cursos"; 
     $sql2 = "SELECT  id_docente, Nombre FROM docentes";
+    $sql3 = "SELECT  id_reporte FROM reportes";
     //3. preparar sentencia 
     $q = $cnx -> prepare ($sql); 
     $p = $cnx2 -> prepare ($sql2); 
+    $o = $cnx3 -> prepare ($sql3); 
+
     //4. ejecutar sentencia 
     $result = $q -> execute(); 
     $result2 = $p -> execute(); 
+    $result3 = $o -> execute(); 
+
 
     $cursos = $q->fetchAll();
     $docentes = $p -> fetchAll();
-    //var_dump($cursos);
+    $reportes =$o -> fetchAll();
+    //var_dump($docentes);
     ?>
 
 
@@ -32,12 +39,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles\stylesReport.css" type ="text/css">
     <link rel="stylesheet" href="styles\styles.css" type ="text/css">
+    <link rel="stylesheet" href="styles\stylesnavbar.css" type ="text/css">
+
     <title>Reporte de horas</title>
 </head>
 <br>
 <body background="images/logo2.jpg" >
+
+<nav class="topnav">
+<a class="active" href="bienvenido_docente.php">Acceuille</a>
+            <a href="create-report.php">Reportar Horas</a>
+            <a href="reportes\consultar_reportes.php">Consultar Reportes </a> 
+            <a href="reportes\consultar_salarios.php">Consultar Salarios </a>  
+        </nav>
+    <br>
   
-    <h2>En este formulario debes ingresar <br>la información del curso en el cual diste clase.</h2>
+    <h2>En este formulario debes ingresar <br> la información del curso en el cual diste clase.</h2>
 
 
 <main>
@@ -53,23 +70,26 @@
           <?php echo $docentes[$i]["Nombre"]?></option>
           <?php
         }
+
       ?>
       </select>
+
+  
 <br>
     <label for="meses">selecciona un mes</label>
         <select name="meses" id="meses">
-            <option value="enero">Enero</option>
-            <option value="febrero">Febrero</option>
-            <option value="marzo">Marzo</option>
-            <option value="abril">Abril</option>
-            <option value="mayo">Mayo</option>
-            <option value="junio">Junio</option>
-            <option value="julio">Julio</option>
-            <option value="agosto">Agosto</option>
-            <option value="septiembre">Septiembre</option>
-            <option value="octubre">Octubre</option>
-            <option value="noviembre">Noviembre</option>
-            <option value="diciembre">Diciembre</option>
+            <option value="1">Enero</option>
+            <option value="2">Febrero</option>
+            <option value="3">Marzo</option>
+            <option value="4">Abril</option>
+            <option value="5">Mayo</option>
+            <option value="6">Junio</option>
+            <option value="7">Julio</option>
+            <option value="8">Agosto</option>
+            <option value="9">Septiembre</option>
+            <option value="10">Octubre</option>
+            <option value="11">Noviembre</option>
+            <option value="12">Diciembre</option>
         </select>
     <br>
 
@@ -118,22 +138,29 @@
     
     <label for="numestu">ingresa el numero de estudiantes </label>
     <input type="int" id="numestu" name="numestu">
-    <br>    
+     
     <label for="modulo">ingresa el módulo </label>
     <input type="text" id="modulo" name="modulo">
-    <br>
+
     <label for="horario">indica el horario</label>
     <input type="text" id="horario" name="horario">
-    <br>
 
-    <input class = "form input"type="submit" value="Enviar información del grupo">  
+    <?php
+        for($i=0; $i<count($reportes); $i++){
+          $id_repo=$reportes[$i]["id_reporte"];
+         }
+      ?>
+    <label for="id_repo"><?php /*echo $id_repo*/?></label>
+    <input id="id_repo" name="id_repo" type="hidden" value="<?php echo $id_repo?> ">
+
+    <input class = "form input" type="submit" value="Enviar información del grupo">  
   </form>
 </main>
 
 </body>
 <br>
 
-  <!  <a href="index.html">Aller à la page d'acceuille </a>
+  <a class = "link" href="index.php">Aller à la page d'acceuille </a>
 
 
 </html>

@@ -40,21 +40,23 @@
     
     <label for="tipo_curso">Elija el tipo de curso</label>
       <select name="tipo_curso" id="tipo_curso">
-        <option value="extensivo">Extensivo</option>
-        <option value="semi-intensivo">Semi-intensivo</option>
-        <option value="intensivo">Intensivo</option>
-        <option value="super-intensivo">Super-intensivo</option>
+        <option value="1">Extensivo</option>
+        <option value="2">Semi-intensivo</option>
+        <option value="3">Intensivo</option>
+        <option value="4">Super-intensivo</option>
     </select>
     <br><br>
     
+
+    
     <label for="nivel">Elija el nivel</label>
       <select name="nivel" id="nivel">
-        <option value="A1">A1</option>
-        <option value="A2">A2</option>
-        <option value="B1">B1</option>
-        <option value="B2">B2</option>
-        <option value="C1">C1</option>
-        <option value="C2">C2</option>
+        <option value="1">A1</option>
+        <option value="2">A2</option>
+        <option value="3">B1</option>
+        <option value="4">B2</option>
+        <option value="5">C1</option>
+        <option value="6">C2</option>
       </select>
     <br><br>
 

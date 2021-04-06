@@ -2,12 +2,13 @@
 
 
 
+
 .form {
-    width: 100%;
+   width: 100%;
     max-width: 600px;
     margin: 0 auto;
     display: flex;
-    flex-direction: column;
+   flex-direction: column;
     justify-content: center;
     align-items: center;
   }
@@ -17,3 +18,12 @@
     height: 30px;
     margin: 0.5rem;
   }
+/*
+  label {
+    font-size: 12px;
+    font-family: 'Ballet', sans-serif;
+    /*color: red;  
+    text-align: center;
+    width: 100%; 
+  }*/
+  
